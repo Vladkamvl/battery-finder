@@ -17,7 +17,7 @@ class MainController extends Controller
 //            "MATCH(Renata, Energizer_Rayovac_Eveready, Maxell_Panasonic_Sony_Toshiba, Varta, Duracell, Timex, Citizen, Others_bt) AGAINST(? IN BOOLEAN MODE)",
 //            array($modelBattery)
 //        )->get();
-        $battery = Battery::where('Renata', 'LIKE', "%$modelBattery%")
+        $batteries = Battery::where('Renata', 'LIKE', "%$modelBattery%")
             ->orWhere('Renata', 'LIKE', "%$modelBattery%")
             ->orWhere('Energizer_Rayovac_Eveready', 'LIKE', "%$modelBattery%")
             ->orWhere('Maxell_Panasonic_Sony_Toshiba', 'LIKE', "%$modelBattery%")
@@ -25,8 +25,8 @@ class MainController extends Controller
             ->orWhere('Timex', 'LIKE', "%$modelBattery%")
             ->orWhere('Citizen', 'LIKE', "%$modelBattery%")
             ->orWhere('Others_bt', 'LIKE', "%$modelBattery%")
-            ->first();
-        return view('find', compact('battery'));
+            ->get();
+        return view('find', compact('batteries'));
     }
     public function about(){
         return view('about');
