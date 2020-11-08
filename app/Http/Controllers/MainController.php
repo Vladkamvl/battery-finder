@@ -22,8 +22,10 @@ class MainController extends Controller
             ->orWhere('Energizer_Rayovac_Eveready', 'LIKE', "%$modelBattery%")
             ->orWhere('Maxell_Panasonic_Sony_Toshiba', 'LIKE', "%$modelBattery%")
             ->orWhere('Varta', 'LIKE', "%$modelBattery%")
+            ->orWhere('Duracell', 'LIKE', "%$modelBattery%")
             ->orWhere('Timex', 'LIKE', "%$modelBattery%")
             ->orWhere('Citizen', 'LIKE', "%$modelBattery%")
+            ->orWhere('SEIKO', 'LIKE', "%$modelBattery%")
             ->orWhere('Others_bt', 'LIKE', "%$modelBattery%")
             ->get();
         return view('find', compact('batteries'));
