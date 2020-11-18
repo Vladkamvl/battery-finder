@@ -1,44 +1,68 @@
 @extends('master')
 
 @section('content')
-    <h1>Аналоги</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Renata</th>
-            <th scope="col">Energizer Rayovac Eveready</th>
-            <th scope="col">Maxell Panasonic Sony Toshiba</th>
-            <th scope="col">Varta</th>
-            <th scope="col">Duracell</th>
-            <th scope="col">Timex</th>
-            <th scope="col">Citizen</th>
-            <th scope="col">SEIKO</th>
-            <th scope="col">Прочие</th>
-            <th scope="col">Размер диаметр х толщина, мм</th>
-            <th scope="col">Емкость, мАч</th>
-            <th scope="col">Напряжение, В</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($batteries as $btn)
-            <tr>
-                <th scope="row">{{ $btn->id }}</th>
-                <td>{{ $btn->Renata }}</td>
-                <td>{{ $btn->Energizer_Rayovac_Eveready }}</td>
-                <td>{{ $btn->Maxell_Panasonic_Sony_Toshiba }}</td>
-                <td>{{ $btn->Varta }}</td>
-                <td>{{ $btn->Duracell }}</td>
-                <td>{{ $btn->Timex }}</td>
-                <td>{{ $btn->Citizen}}</td>
-                <td>{{ $btn->SEIKO}}</td>
-                <td>{{ $btn->Others_bt }}</td>
-                <td>{{ $btn->Size_DxThick }}</td>
-                <td>{{ $btn->Capacity }}</td>
-                <td>{{ $btn->Voltage }}</td>
-            </tr>
-        @endforeach
+    @isset($modelBattery)
+        <h3 class="mt-4 mb-4">Вы ввели:  {{ $modelBattery }}</h3>
+    @else
+        <h3 class="mt-4 mb-4">Вы ввели размер:  {{ $size }}</h3>
+    @endisset
 
-        </tbody>
-    </table>
+
+    @if(count($batteries))
+        <h5>Совпадения: </h5>
+        <hr>
+        @foreach($batteries as $btn)
+            @isset($btn->Renata)
+                <p><strong>Renata </strong>{{ $btn->Renata }}</p>
+            @endisset
+            @isset($btn->Energizer_Rayovac_Eveready)
+                <p><strong>Energizer Rayovac Eveready </strong>{{ $btn->Energizer_Rayovac_Eveready }}</p>
+            @endisset
+
+            @isset($btn->Maxell_Panasonic_Sony_Toshiba)
+                <p><strong>Maxell Panasonic Sony Toshiba </strong>{{ $btn->Maxell_Panasonic_Sony_Toshiba }}</p>
+            @endisset
+
+            @isset($btn->Varta)
+                <p><strong>Varta </strong>{{ $btn->Varta }}</p>
+            @endisset
+
+            @isset($btn->Duracell)
+                <p><strong>Duracell </strong>{{ $btn->Duracell }}</p>
+            @endisset
+
+            @isset($btn->Timex )
+                <p><strong>Timex </strong>{{ $btn->Timex }}</p>
+            @endisset
+
+            @isset($btn->Citizen)
+                <p><strong>Citizen </strong>{{ $btn->Citizen}}</p>
+            @endisset
+
+            @isset($btn->SEIKO)
+                <p><strong>SEIKO </strong>{{ $btn->SEIKO}}</p>
+            @endisset
+
+            @isset($btn->Others_bt )
+                <p><strong>Прочие </strong>{{ $btn->Others_bt }}</p>
+            @endisset
+
+            @isset($btn->Size_DxThick)
+                <p><strong>Размер диаметр х толщина, мм </strong>{{ $btn->Size_DxThick }}</p>
+            @endisset
+
+            @isset($btn->Capacity)
+                <p><strong>Емкость, мАч </strong>{{ $btn->Capacity }}</p>
+            @endisset
+
+            @isset($btn->Voltage)
+                <p><strong>Напряжение, В </strong>{{ $btn->Voltage }}</p>
+            @endisset
+            <hr>
+        @endforeach
+    @else
+        <p><string>Такой батарейки не найдено, попробуйте ввести другую модель</string></p>
+    @endif
+
+
 @endsection

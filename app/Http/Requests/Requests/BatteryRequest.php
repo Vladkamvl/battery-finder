@@ -24,7 +24,7 @@ class BatteryRequest extends FormRequest
     public function rules()
     {
         return [
-            'modelBattery' => 'required | string'
+            'modelBattery' => 'required | string | min:2'
         ];
     }
 
@@ -37,7 +37,8 @@ class BatteryRequest extends FormRequest
     {
         return [
             'modelBattery.required' => 'Введите модель батарейки',
-            'modelBattery.string' => 'Модель батарейки должная быть текстом'
+            'modelBattery.string' => 'Модель батарейки должная быть текстом',
+            'modelBattery.min' => 'Модель батарейки должная быть длинее 2-х символов',
         ];
     }
 }

@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'MainController@index')->name('index');
 Route::get('/find', 'MainController@find')->name('find');
+Route::get('/find_by_size', 'MainController@findBySize')->name('findBySize');
 Route::get('/about', 'MainController@about')->name('about');
+Route::get('/find_size', 'MainController@findSize')->name('findSize');

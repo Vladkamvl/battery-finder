@@ -24,17 +24,26 @@
         <div class="container">
             <nav class="navbar navigation">
                 <a class="navbar-brand" href="{{route('index')}}"><i class="fa fa-bolt fa-2x" aria-hidden="true" style="color: white;"></i>
-
+                <strong style="
+                    color: #fff;
+                    padding-left: 8px;
+                    font-size: 25px;
+                ">BF</strong>
                 </a>
                 <div class="header__login header__login-mobile">
                 </div>
                 <ul class="navigation-nav">
-                    <li class="nav-item
+                    <li class="nav-item dropdown
                     @if(Request::route()->getName() === 'index' || Request::route()->getName() === 'find')
                         active
                     @endif
                     ">
-                        <a class="nav-link" href="{{route('index')}}">Поиск</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Поиск <i class="fa fa-caret-down" aria-hidden="true" style="color:#fff;"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('index') }}">По модели</a>
+                            <a class="dropdown-item" href="{{ route('findBySize') }}">По размеру</a>
+                        </div>
                     </li>
                     <li class="nav-item
                     @if(Request::route()->getName() === 'about')
