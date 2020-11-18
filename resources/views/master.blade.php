@@ -74,9 +74,9 @@
 {{--        </div>--}}
 {{--    </header>--}}
 {{--</div>--}}
-<nav class="navbar navbar-expand-lg header">
+<nav class="navbar navbar-expand-lg header" style="background-color: #6f43d6; color: #ffffff;">
     <div class="container">
-        <a class="navbar-brand ml-4" href="{{route('index')}}"><i class="fa fa-bolt fa-2x" aria-hidden="true"
+        <a class="navbar-brand" href="{{route('index')}}"><i class="fa fa-bolt fa-2x" aria-hidden="true"
                                                              style="color: white;"></i>
             <p class="d-none d-sm-block"><strong style="
                             color: #fff;
@@ -86,7 +86,7 @@
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars navbar-toggler-icon" style="padding-top: 10px; font-size: 30px;" aria-hidden="true"></i>
+            <i class="fa fa-bars navbar-toggler-icon " style="padding-top: 10px; font-size: 30px;" aria-hidden="true"></i>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -96,11 +96,11 @@
                         active
                     @endif
                     ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #ffffff;">
                         Поиск <i class="fa fa-caret-down" aria-hidden="true" style="color:#fff;"></i>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="color: #ffffff;">
                         <a class="dropdown-item" href="{{ route('index') }}">По модели</a>
                         <a class="dropdown-item" href="{{ route('findBySize') }}">По размеру</a>
                     </div>
@@ -109,7 +109,7 @@
                     @if(Request::route()->getName() === 'about')
                         active
                     @endif">
-                    <a class="nav-link" href="{{ route('about') }}">О сайте</a>
+                    <a class="nav-link" href="{{ route('about') }}" style="color: #ffffff;">О сайте</a>
                 </li>
             </ul>
         </div>

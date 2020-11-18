@@ -3,7 +3,7 @@
 @section('title', 'Поиск по модели')
 
 @section('content')
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
         <form action="{{ route('find') }}" method="GET">
             <div class="form-group mt-4">
                 <label for="exampleInputEmail1">Модель батарейки</label>

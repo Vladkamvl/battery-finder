@@ -3,7 +3,7 @@
 @section('title', 'Поиск по размеру')
 
 @section('content')
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-center">
         <form action="{{ route('findSize') }}" method="GET">
             <div class="form-group mt-4">
                 <h3>Поиск по размеру</h3>
