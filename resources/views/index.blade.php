@@ -13,7 +13,7 @@
         </form>
     </div>
     @if ($errors->any())
-        <div class="alert alert-danger">
+        <div class="alert alert-danger mt-4">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error }}</li>

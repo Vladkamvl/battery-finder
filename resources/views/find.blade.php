@@ -64,5 +64,35 @@
         <p><string>Такой батарейки не найдено, попробуйте ввести другую модель</string></p>
     @endif
 
+    @if(count($batteries))
+        <br>
+        <h5>Похожие товары на Яндекс.Маркете: </h5>
+        <div id="marketWidget1"></div>
+    @endif
 
 @endsection
+@if(isset($batteries[0]))
+    <script async src="https://aflt.market.yandex.ru/widget/script/api"
+            type="text/javascript"></script>
+    <script type="text/javascript">
+        (function (w) {
+            function start() {
+                w.removeEventListener("YaMarketAffiliateLoad", start);
+                w.YaMarketAffiliate.createWidget({
+                    containerId: "marketWidget1",
+                    type: "offers",
+                    params: {
+                        clid: 2310490,
+                        searchText: "Батарейка {{ $batteries[0]->Renata }}",
+                        themeId: 2
+                    }
+                });
+            }
+            w.YaMarketAffiliate
+                ? start()
+                : w.addEventListener("YaMarketAffiliateLoad", start);
+        })(window);
+    </script>
+@endif
+
+
